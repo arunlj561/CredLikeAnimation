@@ -41,7 +41,7 @@ class StackHolder: UIView {
     
     func showNextStack(){
         if let stackCard = getStackCard(number: currentPresenting){
-            if currentPresenting < maxStackView{
+            if currentPresenting < stackList.count{
                 stackCard.showOverlapView()
             }
         }
@@ -49,7 +49,7 @@ class StackHolder: UIView {
             stackCard.showView()
         }
         
-        if currentPresenting < (maxStackView) {
+        if currentPresenting < (stackList.count) {
             currentPresenting = currentPresenting + 1
         }
     }
