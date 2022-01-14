@@ -1,24 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CredLikeAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxX-Di-o0y" customClass="StackHolder" customModule="CredLikeAnimation" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4PY-r4-2yl" userLabel="DefaultCard">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nikunj, How much do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEw-dx-SPd">
+                                                <rect key="frame" x="30" y="144.5" width="354" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="move the dial and set any amount you need upto ₹ 4,50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFQ-To-12N">
+                                                <rect key="frame" x="30" y="173.5" width="354" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-51-Kqi">
+                                                <rect key="frame" x="25" y="227" width="364" height="364"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="UDu-51-Kqi" secondAttribute="height" multiplier="1:1" id="wON-t7-p2L"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="UDu-51-Kqi" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" constant="25" id="3t7-KS-WVh"/>
+                                            <constraint firstItem="UDu-51-Kqi" firstAttribute="centerX" secondItem="4PY-r4-2yl" secondAttribute="centerX" id="Elq-51-guQ"/>
+                                            <constraint firstItem="gFQ-To-12N" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" constant="30" id="JYN-Ak-LVe"/>
+                                            <constraint firstItem="OEw-dx-SPd" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" constant="30" id="M07-ps-HKa"/>
+                                            <constraint firstItem="UDu-51-Kqi" firstAttribute="centerY" secondItem="4PY-r4-2yl" secondAttribute="centerY" id="P7N-zt-ATs"/>
+                                            <constraint firstItem="UDu-51-Kqi" firstAttribute="top" secondItem="gFQ-To-12N" secondAttribute="bottom" constant="20" id="Pai-ZU-GzX"/>
+                                            <constraint firstItem="gFQ-To-12N" firstAttribute="top" secondItem="OEw-dx-SPd" secondAttribute="bottom" constant="8" id="e7r-xD-xkf"/>
+                                            <constraint firstAttribute="trailing" secondItem="OEw-dx-SPd" secondAttribute="trailing" constant="30" id="fGB-Fi-1M5"/>
+                                            <constraint firstAttribute="trailing" secondItem="gFQ-To-12N" secondAttribute="trailing" constant="30" id="h7U-1x-jn3"/>
+                                            <constraint firstAttribute="trailing" secondItem="UDu-51-Kqi" secondAttribute="trailing" constant="25" id="sWP-2Z-aQO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVc-mm-f7Y" customClass="StackCardView" customModule="CredLikeAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="103.5" width="414" height="654.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nikunj, How much do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-IJ-5gz">
+                                                <rect key="frame" x="30" y="16" width="354" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="move the dial and set any amount you need upto ₹ 4,50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj0-zW-fzq">
+                                                <rect key="frame" x="30" y="45" width="354" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.098039215686274508" green="0.12941176470588234" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="sj0-zW-fzq" firstAttribute="leading" secondItem="UVc-mm-f7Y" secondAttribute="leading" constant="30" id="4ob-zn-vnw"/>
+                                            <constraint firstItem="sj0-zW-fzq" firstAttribute="top" secondItem="BC8-IJ-5gz" secondAttribute="bottom" constant="8" id="G5z-of-Ji7"/>
+                                            <constraint firstItem="BC8-IJ-5gz" firstAttribute="top" secondItem="UVc-mm-f7Y" secondAttribute="top" constant="16" id="H7I-pj-qnB"/>
+                                            <constraint firstAttribute="trailing" secondItem="sj0-zW-fzq" secondAttribute="trailing" constant="30" id="Rim-Cw-5kl"/>
+                                            <constraint firstItem="BC8-IJ-5gz" firstAttribute="leading" secondItem="UVc-mm-f7Y" secondAttribute="leading" constant="30" id="hcb-tI-rMP"/>
+                                            <constraint firstAttribute="trailing" secondItem="BC8-IJ-5gz" secondAttribute="trailing" constant="30" id="x7s-L6-Wqn"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="currentCardNumber">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="callToActionTitle" value="Select your Bank Account"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stC-cB-qcd" customClass="StackCardView" customModule="CredLikeAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="234.5" width="414" height="523.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nikunj, How much do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZn-ht-StC">
+                                                <rect key="frame" x="30" y="16" width="354" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="move the dial and set any amount you need upto ₹ 4,50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg9-MO-n9g">
+                                                <rect key="frame" x="30" y="45" width="354" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="gZn-ht-StC" firstAttribute="leading" secondItem="stC-cB-qcd" secondAttribute="leading" constant="30" id="9Xi-7x-jU2"/>
+                                            <constraint firstItem="jg9-MO-n9g" firstAttribute="top" secondItem="gZn-ht-StC" secondAttribute="bottom" constant="8" id="RUq-g7-cDz"/>
+                                            <constraint firstAttribute="trailing" secondItem="jg9-MO-n9g" secondAttribute="trailing" constant="30" id="bxc-v9-Q9A"/>
+                                            <constraint firstItem="gZn-ht-StC" firstAttribute="top" secondItem="stC-cB-qcd" secondAttribute="top" constant="16" id="fBt-u2-XLV"/>
+                                            <constraint firstItem="jg9-MO-n9g" firstAttribute="leading" secondItem="stC-cB-qcd" secondAttribute="leading" constant="30" id="sgW-Yt-sia"/>
+                                            <constraint firstAttribute="trailing" secondItem="gZn-ht-StC" secondAttribute="trailing" constant="30" id="zM5-Xj-csh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="currentCardNumber">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="callToActionTitle" value="Tap for 1 click kyc"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTv-80-DYw" customClass="StackCardView" customModule="CredLikeAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="339" width="414" height="419"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="move the dial and set any amount you need upto ₹ 4,50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKU-TS-zdQ">
+                                                <rect key="frame" x="30" y="45" width="354" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nikunj, How much do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrS-fk-Q6C">
+                                                <rect key="frame" x="30" y="16" width="354" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="pKU-TS-zdQ" secondAttribute="trailing" constant="30" id="ImX-uz-BlN"/>
+                                            <constraint firstItem="XrS-fk-Q6C" firstAttribute="leading" secondItem="eTv-80-DYw" secondAttribute="leading" constant="30" id="SUs-wG-fKH"/>
+                                            <constraint firstItem="pKU-TS-zdQ" firstAttribute="top" secondItem="XrS-fk-Q6C" secondAttribute="bottom" constant="8" id="TqN-ry-x6C"/>
+                                            <constraint firstItem="XrS-fk-Q6C" firstAttribute="top" secondItem="eTv-80-DYw" secondAttribute="top" constant="16" id="ai8-NO-kOj"/>
+                                            <constraint firstAttribute="trailing" secondItem="XrS-fk-Q6C" secondAttribute="trailing" constant="30" id="d2O-xx-w9x"/>
+                                            <constraint firstItem="pKU-TS-zdQ" firstAttribute="leading" secondItem="eTv-80-DYw" secondAttribute="leading" constant="30" id="qhz-cx-TTs"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="currentCardNumber">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="callToActionTitle" value="Submit the form"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-kf-HRx">
+                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cfE-hQ-RLX"/>
+                                        </constraints>
+                                        <state key="normal" title="Proceed To EMI Selection">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="actionTappedCTA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Xl-RP-4Wl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4PY-r4-2yl" secondAttribute="trailing" id="0dk-eQ-NDj"/>
+                                    <constraint firstAttribute="trailing" secondItem="sVf-kf-HRx" secondAttribute="trailing" id="Dvp-qX-uzQ"/>
+                                    <constraint firstItem="eTv-80-DYw" firstAttribute="height" secondItem="stC-cB-qcd" secondAttribute="height" multiplier="0.8" id="Iin-lz-Mil"/>
+                                    <constraint firstItem="eTv-80-DYw" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="KiF-iq-oFU"/>
+                                    <constraint firstAttribute="trailing" secondItem="UVc-mm-f7Y" secondAttribute="trailing" id="TQA-9p-NTw"/>
+                                    <constraint firstItem="stC-cB-qcd" firstAttribute="height" secondItem="UVc-mm-f7Y" secondAttribute="height" multiplier="0.8" id="WvD-Ao-UJk"/>
+                                    <constraint firstItem="UVc-mm-f7Y" firstAttribute="height" secondItem="4PY-r4-2yl" secondAttribute="height" multiplier="0.8" id="XF1-5v-vPc"/>
+                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="top" secondItem="stC-cB-qcd" secondAttribute="bottom" id="ZKq-wi-S0u"/>
+                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="top" secondItem="eTv-80-DYw" secondAttribute="bottom" id="c3A-8b-8ee"/>
+                                    <constraint firstItem="4PY-r4-2yl" firstAttribute="top" secondItem="WxX-Di-o0y" secondAttribute="top" id="cOc-8c-tHO"/>
+                                    <constraint firstAttribute="bottom" secondItem="sVf-kf-HRx" secondAttribute="bottom" id="dOh-1l-1I4"/>
+                                    <constraint firstItem="UVc-mm-f7Y" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="gNl-xm-56n"/>
+                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="hAe-nl-ugm"/>
+                                    <constraint firstAttribute="trailing" secondItem="eTv-80-DYw" secondAttribute="trailing" id="hVX-dd-ARH"/>
+                                    <constraint firstAttribute="trailing" secondItem="stC-cB-qcd" secondAttribute="trailing" id="ks6-hZ-6Vw"/>
+                                    <constraint firstItem="stC-cB-qcd" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="mDl-vd-CdF"/>
+                                    <constraint firstItem="4PY-r4-2yl" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="nDE-Q0-fPr"/>
+                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="top" secondItem="UVc-mm-f7Y" secondAttribute="bottom" id="oaL-mt-kc4"/>
+                                    <constraint firstAttribute="bottom" secondItem="4PY-r4-2yl" secondAttribute="bottom" id="rfE-X0-leI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WxX-Di-o0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S8n-nz-isD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WxX-Di-o0y" secondAttribute="trailing" id="reJ-3e-AW9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WxX-Di-o0y" secondAttribute="bottom" id="yid-fy-LLf"/>
+                            <constraint firstItem="WxX-Di-o0y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yoA-9v-QTy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stackCardFirst" destination="UVc-mm-f7Y" id="I3P-pN-1rl"/>
+                        <outlet property="stackCardSecond" destination="stC-cB-qcd" id="XPu-s5-d0I"/>
+                        <outlet property="stackCardThird" destination="eTv-80-DYw" id="k5Q-lK-ipG"/>
+                        <outlet property="stackHolder" destination="WxX-Di-o0y" id="jSN-zN-16Y"/>
+                        <outletCollection property="stackViewCollection" destination="UVc-mm-f7Y" collectionClass="NSMutableArray" id="qPH-9C-pcF"/>
+                        <outletCollection property="stackViewCollection" destination="stC-cB-qcd" collectionClass="NSMutableArray" id="qCx-2f-B6X"/>
+                        <outletCollection property="stackViewCollection" destination="eTv-80-DYw" collectionClass="NSMutableArray" id="cl8-hV-Ajh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="79.6875"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
