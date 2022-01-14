@@ -7,23 +7,10 @@
 
 import UIKit
 
-let maxStackView = 3
-
-protocol CardActionDelegate : AnyObject {   
-    func dismissCurrentCard(cardNumber:Int)
-}
-
-enum CardState{
-    case expanded
-    case collapse
-    case overlap
-}
-
 @IBDesignable
 class StackCardView: UIView {
 
     @IBInspectable var currentCardNumber : Int = 1
-    @IBInspectable var callToActionTitle : String = ""
     
     private var currentCardState : CardState = .collapse
     
@@ -77,12 +64,7 @@ class StackCardView: UIView {
         case .collapse:
             break            
         case .expanded:
-            delegate?.dismissCurrentCard(cardNumber: self.currentCardNumber)
-//            dismissView(isInitial: false)
-        case .overlap:
-//            delegate?.dismissCurrentCard(cardNumber: self.currentCardNumber)
-//            dismissView(isInitial: false)
-            break
+            delegate?.dismissCurrentCard(cardNumber: self.currentCardNumber)        
         }
     }
     
@@ -111,7 +93,6 @@ class StackCardView: UIView {
     
     func showOverlapView(){
         overlapView.alpha = 0
-//        currentCardState = .overlap
         UIView.animate(withDuration: 0.5) {
             self.overlapView.transform = CGAffineTransform.identity
             self.overlapView.alpha = 1
@@ -119,70 +100,9 @@ class StackCardView: UIView {
     }
     func hideOverlapView(){
         overlapView.alpha = 1
-//        currentCardState = .overlap
         UIView.animate(withDuration: 0.5) {
             self.overlapView.transform = CGAffineTransform.init(translationX: 0, y: self.overlapView.frame.height * 2)
             self.overlapView.alpha = 0
         }
     }
-}
-
-
-class StackHolder: UIView {
-
-    var currentPresenting : Int = 0
-    
-    var stackList:[StackCardView] = []
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-      
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupView()
-    }
-
-    private func setupView() {
-    
-    }
-    
-    func addStackView(stackView:StackCardView){
-        stackList.append(stackView)
-    }
-    
-    func getStackCard(number:Int) -> StackCardView?{
-        return stackList.filter({ $0.currentCardNumber == number }).first
-    }
-    
-    func showNextStack() -> String?{
-        if let stackCard = getStackCard(number: currentPresenting){
-            if currentPresenting < maxStackView{
-                stackCard.showOverlapView()
-            }
-        }
-        if let stackCard = getStackCard(number: currentPresenting + 1){
-            stackCard.showView()
-            if currentPresenting < (maxStackView) {
-                currentPresenting = currentPresenting + 1
-            }
-            return stackCard.callToActionTitle
-        }
-        return nil
-                
-    }
-    
-    func dismissStacks(){
-        if let stackCard = getStackCard(number: currentPresenting){
-            stackCard.dismissView()
-        }
-        if let stackCard = getStackCard(number: currentPresenting - 1){
-            
-            stackCard.hideOverlapView()
-        }
-        currentPresenting = currentPresenting - 1
-        
-    }
-        
 }

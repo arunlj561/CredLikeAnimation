@@ -46,11 +46,27 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8R-BK-vFW">
+                                                <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Fgo-jr-YBe"/>
+                                                </constraints>
+                                                <state key="normal" title="Proceed To EMI Selection">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionTappedCTA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r6G-uS-0mr"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="C8R-BK-vFW" secondAttribute="bottom" id="1Ws-it-XYq"/>
                                             <constraint firstItem="UDu-51-Kqi" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" constant="25" id="3t7-KS-WVh"/>
                                             <constraint firstItem="UDu-51-Kqi" firstAttribute="centerX" secondItem="4PY-r4-2yl" secondAttribute="centerX" id="Elq-51-guQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="C8R-BK-vFW" secondAttribute="trailing" id="GIc-6N-FJk"/>
+                                            <constraint firstItem="C8R-BK-vFW" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" id="J9f-Y3-wxu"/>
                                             <constraint firstItem="gFQ-To-12N" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" constant="30" id="JYN-Ak-LVe"/>
                                             <constraint firstItem="OEw-dx-SPd" firstAttribute="leading" secondItem="4PY-r4-2yl" secondAttribute="leading" constant="30" id="M07-ps-HKa"/>
                                             <constraint firstItem="UDu-51-Kqi" firstAttribute="centerY" secondItem="4PY-r4-2yl" secondAttribute="centerY" id="P7N-zt-ATs"/>
@@ -62,7 +78,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVc-mm-f7Y" customClass="StackCardView" customModule="CredLikeAnimation" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="103.5" width="414" height="654.5"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="414" height="654.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nikunj, How much do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC8-IJ-5gz">
                                                 <rect key="frame" x="30" y="16" width="354" height="21"/>
@@ -76,13 +92,29 @@
                                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERv-5A-qHN">
+                                                <rect key="frame" x="0.0" y="594.5" width="414" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="WiG-IX-qmm"/>
+                                                </constraints>
+                                                <state key="normal" title="Select your Bank Account">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionSelectYourbank" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Eh-Si-ycf"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.098039215686274508" green="0.12941176470588234" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="sj0-zW-fzq" firstAttribute="leading" secondItem="UVc-mm-f7Y" secondAttribute="leading" constant="30" id="4ob-zn-vnw"/>
+                                            <constraint firstItem="ERv-5A-qHN" firstAttribute="leading" secondItem="UVc-mm-f7Y" secondAttribute="leading" id="F5c-pD-UNb"/>
+                                            <constraint firstAttribute="trailing" secondItem="ERv-5A-qHN" secondAttribute="trailing" id="FVR-zA-0nF"/>
                                             <constraint firstItem="sj0-zW-fzq" firstAttribute="top" secondItem="BC8-IJ-5gz" secondAttribute="bottom" constant="8" id="G5z-of-Ji7"/>
                                             <constraint firstItem="BC8-IJ-5gz" firstAttribute="top" secondItem="UVc-mm-f7Y" secondAttribute="top" constant="16" id="H7I-pj-qnB"/>
                                             <constraint firstAttribute="trailing" secondItem="sj0-zW-fzq" secondAttribute="trailing" constant="30" id="Rim-Cw-5kl"/>
+                                            <constraint firstAttribute="bottom" secondItem="ERv-5A-qHN" secondAttribute="bottom" id="TM4-1c-3em"/>
                                             <constraint firstItem="BC8-IJ-5gz" firstAttribute="leading" secondItem="UVc-mm-f7Y" secondAttribute="leading" constant="30" id="hcb-tI-rMP"/>
                                             <constraint firstAttribute="trailing" secondItem="BC8-IJ-5gz" secondAttribute="trailing" constant="30" id="x7s-L6-Wqn"/>
                                         </constraints>
@@ -90,11 +122,10 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="currentCardNumber">
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="callToActionTitle" value="Select your Bank Account"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stC-cB-qcd" customClass="StackCardView" customModule="CredLikeAnimation" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="234.5" width="414" height="523.5"/>
+                                        <rect key="frame" x="0.0" y="294.5" width="414" height="523.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Nikunj, How much do you need?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZn-ht-StC">
                                                 <rect key="frame" x="30" y="16" width="354" height="21"/>
@@ -108,12 +139,28 @@
                                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQR-Fd-EEa">
+                                                <rect key="frame" x="0.0" y="463.5" width="414" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="FlN-hO-2D0"/>
+                                                </constraints>
+                                                <state key="normal" title="Tap for 1 click kyc">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionTapFor1ClickKYC" destination="BYZ-38-t0r" eventType="touchUpInside" id="sYf-H5-1O8"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="EQR-Fd-EEa" firstAttribute="leading" secondItem="stC-cB-qcd" secondAttribute="leading" id="3tq-0t-rCw"/>
                                             <constraint firstItem="gZn-ht-StC" firstAttribute="leading" secondItem="stC-cB-qcd" secondAttribute="leading" constant="30" id="9Xi-7x-jU2"/>
+                                            <constraint firstAttribute="trailing" secondItem="EQR-Fd-EEa" secondAttribute="trailing" id="Qx4-tR-8iW"/>
                                             <constraint firstItem="jg9-MO-n9g" firstAttribute="top" secondItem="gZn-ht-StC" secondAttribute="bottom" constant="8" id="RUq-g7-cDz"/>
                                             <constraint firstAttribute="trailing" secondItem="jg9-MO-n9g" secondAttribute="trailing" constant="30" id="bxc-v9-Q9A"/>
+                                            <constraint firstAttribute="bottom" secondItem="EQR-Fd-EEa" secondAttribute="bottom" id="eRi-Ef-21e"/>
                                             <constraint firstItem="gZn-ht-StC" firstAttribute="top" secondItem="stC-cB-qcd" secondAttribute="top" constant="16" id="fBt-u2-XLV"/>
                                             <constraint firstItem="jg9-MO-n9g" firstAttribute="leading" secondItem="stC-cB-qcd" secondAttribute="leading" constant="30" id="sgW-Yt-sia"/>
                                             <constraint firstAttribute="trailing" secondItem="gZn-ht-StC" secondAttribute="trailing" constant="30" id="zM5-Xj-csh"/>
@@ -122,11 +169,10 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="currentCardNumber">
                                                 <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="callToActionTitle" value="Tap for 1 click kyc"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTv-80-DYw" customClass="StackCardView" customModule="CredLikeAnimation" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="339" width="414" height="419"/>
+                                        <rect key="frame" x="0.0" y="399" width="414" height="419"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="move the dial and set any amount you need upto ₹ 4,50,000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKU-TS-zdQ">
                                                 <rect key="frame" x="30" y="45" width="354" height="33.5"/>
@@ -140,58 +186,57 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrD-EN-WsR">
+                                                <rect key="frame" x="0.0" y="359" width="414" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="WJa-xY-njF"/>
+                                                </constraints>
+                                                <state key="normal" title="Submit the form">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionSubmitTheForm" destination="BYZ-38-t0r" eventType="touchUpInside" id="BPV-fA-2f9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="hrD-EN-WsR" firstAttribute="leading" secondItem="eTv-80-DYw" secondAttribute="leading" id="CAh-V0-bAx"/>
+                                            <constraint firstAttribute="bottom" secondItem="hrD-EN-WsR" secondAttribute="bottom" id="Eb0-MD-YEe"/>
                                             <constraint firstAttribute="trailing" secondItem="pKU-TS-zdQ" secondAttribute="trailing" constant="30" id="ImX-uz-BlN"/>
                                             <constraint firstItem="XrS-fk-Q6C" firstAttribute="leading" secondItem="eTv-80-DYw" secondAttribute="leading" constant="30" id="SUs-wG-fKH"/>
                                             <constraint firstItem="pKU-TS-zdQ" firstAttribute="top" secondItem="XrS-fk-Q6C" secondAttribute="bottom" constant="8" id="TqN-ry-x6C"/>
                                             <constraint firstItem="XrS-fk-Q6C" firstAttribute="top" secondItem="eTv-80-DYw" secondAttribute="top" constant="16" id="ai8-NO-kOj"/>
                                             <constraint firstAttribute="trailing" secondItem="XrS-fk-Q6C" secondAttribute="trailing" constant="30" id="d2O-xx-w9x"/>
+                                            <constraint firstAttribute="trailing" secondItem="hrD-EN-WsR" secondAttribute="trailing" id="dys-N3-QIQ"/>
                                             <constraint firstItem="pKU-TS-zdQ" firstAttribute="leading" secondItem="eTv-80-DYw" secondAttribute="leading" constant="30" id="qhz-cx-TTs"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="currentCardNumber">
                                                 <integer key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="callToActionTitle" value="Submit the form"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVf-kf-HRx">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="cfE-hQ-RLX"/>
-                                        </constraints>
-                                        <state key="normal" title="Proceed To EMI Selection">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="actionTappedCTA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Xl-RP-4Wl"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4PY-r4-2yl" secondAttribute="trailing" id="0dk-eQ-NDj"/>
-                                    <constraint firstAttribute="trailing" secondItem="sVf-kf-HRx" secondAttribute="trailing" id="Dvp-qX-uzQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="UVc-mm-f7Y" secondAttribute="bottom" id="32Y-kp-Q4A"/>
                                     <constraint firstItem="eTv-80-DYw" firstAttribute="height" secondItem="stC-cB-qcd" secondAttribute="height" multiplier="0.8" id="Iin-lz-Mil"/>
                                     <constraint firstItem="eTv-80-DYw" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="KiF-iq-oFU"/>
+                                    <constraint firstAttribute="bottom" secondItem="stC-cB-qcd" secondAttribute="bottom" id="Scm-kB-bFQ"/>
                                     <constraint firstAttribute="trailing" secondItem="UVc-mm-f7Y" secondAttribute="trailing" id="TQA-9p-NTw"/>
                                     <constraint firstItem="stC-cB-qcd" firstAttribute="height" secondItem="UVc-mm-f7Y" secondAttribute="height" multiplier="0.8" id="WvD-Ao-UJk"/>
                                     <constraint firstItem="UVc-mm-f7Y" firstAttribute="height" secondItem="4PY-r4-2yl" secondAttribute="height" multiplier="0.8" id="XF1-5v-vPc"/>
-                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="top" secondItem="stC-cB-qcd" secondAttribute="bottom" id="ZKq-wi-S0u"/>
-                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="top" secondItem="eTv-80-DYw" secondAttribute="bottom" id="c3A-8b-8ee"/>
                                     <constraint firstItem="4PY-r4-2yl" firstAttribute="top" secondItem="WxX-Di-o0y" secondAttribute="top" id="cOc-8c-tHO"/>
-                                    <constraint firstAttribute="bottom" secondItem="sVf-kf-HRx" secondAttribute="bottom" id="dOh-1l-1I4"/>
                                     <constraint firstItem="UVc-mm-f7Y" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="gNl-xm-56n"/>
-                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="hAe-nl-ugm"/>
                                     <constraint firstAttribute="trailing" secondItem="eTv-80-DYw" secondAttribute="trailing" id="hVX-dd-ARH"/>
                                     <constraint firstAttribute="trailing" secondItem="stC-cB-qcd" secondAttribute="trailing" id="ks6-hZ-6Vw"/>
                                     <constraint firstItem="stC-cB-qcd" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="mDl-vd-CdF"/>
                                     <constraint firstItem="4PY-r4-2yl" firstAttribute="leading" secondItem="WxX-Di-o0y" secondAttribute="leading" id="nDE-Q0-fPr"/>
-                                    <constraint firstItem="sVf-kf-HRx" firstAttribute="top" secondItem="UVc-mm-f7Y" secondAttribute="bottom" id="oaL-mt-kc4"/>
                                     <constraint firstAttribute="bottom" secondItem="4PY-r4-2yl" secondAttribute="bottom" id="rfE-X0-leI"/>
+                                    <constraint firstAttribute="bottom" secondItem="eTv-80-DYw" secondAttribute="bottom" id="u0k-gS-8rV"/>
                                 </constraints>
                             </view>
                         </subviews>

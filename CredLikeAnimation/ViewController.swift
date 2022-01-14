@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var stackViewCollection: [StackCardView]!
     
+    @IBOutlet weak var ctaButton: UIButton!
     
     @IBOutlet weak var stackHolder: StackHolder!
     
@@ -29,10 +30,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func actionTappedCTA(_ sender: UIButton) {
-        if let title = stackHolder.showNextStack(){
-            sender.setTitle(title, for: .normal)
-        }
+        stackHolder.showNextStack()
     }
+    
+    @IBAction func actionSubmitTheForm(){
+        stackHolder.showNextStack()
+    }
+    @IBAction func actionSelectYourbank(){
+        stackHolder.showNextStack()
+    }
+    
+    @IBAction func actionTapFor1ClickKYC(){
+        stackHolder.showNextStack()
+    }
+    
     
 }
 
