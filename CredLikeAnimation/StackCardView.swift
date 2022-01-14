@@ -72,7 +72,9 @@ class StackCardView: UIView {
         return self.currentCardState == .expanded
     }
     
+    // animation to dismiss View
     func dismissView(isInitial:Bool = false){
+        // alpha change when dissming but not while loading
         if !isInitial {
             alpha = 1
         }
@@ -82,6 +84,8 @@ class StackCardView: UIView {
             self.transform = CGAffineTransform.init(translationX: 0, y: self.frame.height * 2)
         }
     }
+    
+    // animation to show View
     func showView(){
         alpha = 0
         currentCardState = .expanded
@@ -91,6 +95,7 @@ class StackCardView: UIView {
         }
     }
     
+    // Added overlay view which is shown when there is an overlap stack
     func showOverlapView(){
         overlapView.alpha = 0
         UIView.animate(withDuration: 0.5) {

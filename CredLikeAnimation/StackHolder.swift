@@ -11,9 +11,9 @@ let maxStackView = 3
 
 class StackHolder: UIView {
 
-    var currentPresenting : Int = 0
+    private var currentPresenting : Int = 0
     
-    var stackList:[StackCardView] = []
+    private var stackList:[StackCardView] = []
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +29,7 @@ class StackHolder: UIView {
     
     }
     
+    // adding stack maximum 3 
     func addStackView(stackView:StackCardView){
         if stackList.count < maxStackView{
             stackList.append(stackView)
@@ -39,6 +40,7 @@ class StackHolder: UIView {
         return stackList.filter({ $0.currentCardNumber == number }).first
     }
     
+    // fetches depending on Current top and then shows next
     func showNextStack(){
         if let stackCard = getStackCard(number: currentPresenting){
             if currentPresenting < stackList.count{
@@ -54,6 +56,7 @@ class StackHolder: UIView {
         }
     }
     
+    // fetches depending on Current top and then dismiss
     func dismissStacks(){
         
         if let stackCard = getStackCard(number: currentPresenting){

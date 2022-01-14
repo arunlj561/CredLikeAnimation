@@ -7,6 +7,16 @@
 
 import UIKit
 
+/**
+ To check for 2 cards
+ To Edit the stack card you can comment line number 38
+ 
+ Go to Main.storyboard
+ Select stackCardSecond go to inspector keep the current number as 1
+ Select stackCardThird go to inspector keep the current number as 2
+ */
+
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var stackCardFirst: StackCardView!
@@ -24,6 +34,7 @@ class ViewController: UIViewController {
         stackCardFirst.delegate = self
         stackCardThird.delegate = self
         stackCardSecond.delegate = self
+        // Addding UI which we want to be collapse
         stackHolder.addStackView(stackView: stackCardFirst)
         stackHolder.addStackView(stackView: stackCardSecond)
         stackHolder.addStackView(stackView: stackCardThird)
