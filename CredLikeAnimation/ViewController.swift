@@ -29,18 +29,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stackCardFirst.delegate = self
-        stackCardThird.delegate = self
-        stackCardSecond.delegate = self
-        
-        // Addding Base view which will not collapse and will be a background view 
-        stackHolder.addBaseView(baseView: stackCardBg)
-        
-        // Addding UI which we want to be collapse
-        stackHolder.addStackView(stackView: stackCardSecond)
-        stackHolder.addStackView(stackView: stackCardFirst)
-        stackHolder.addStackView(stackView: stackCardThird)
-        
+
+        // Addding Base view which will not collapse and will be a background view
+        // stackViews array whcih we want to be collapse
+        stackHolder.addStackViews(baseView: stackCardBg, stackViews: [stackCardFirst, stackCardSecond, stackCardThird], cardDelegate: self)
+                
     }
 
     @IBAction func actionTappedCTA(_ sender: UIButton) {
@@ -64,6 +57,6 @@ class ViewController: UIViewController {
 extension ViewController : CardActionDelegate{
 
     func dismissCurrentCard(cardNumber: Int) {
-        stackHolder.dismissStacks()
+        print("Dismissed card number \(cardNumber)")
     }
 }

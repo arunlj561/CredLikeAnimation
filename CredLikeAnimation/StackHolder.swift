@@ -7,14 +7,17 @@
 
 import UIKit
 
-let maxStackView = 3
-
+let maxStackView = 4
+@IBDesignable
 class StackHolder: UIView {
 
     private var currentPresenting : Int = 0
     private var stackList:[StackCardView] = []
     
-    var heightDifference : CGFloat = 0.2
+    weak var delegate : CardActionDelegate?
+        
+    @IBInspectable var heightDifference : CGFloat = 0.2
+    
     private var baseBgView : UIView!
     
     override init(frame: CGRect) {
@@ -31,8 +34,8 @@ class StackHolder: UIView {
     
     }
     
-    
-    func addBaseView(baseView:UIView){
+    // Use to add Base view
+    private func addBaseView(baseView:UIView){
         baseBgView = baseView
         baseBgView.translatesAutoresizingMaskIntoConstraints = false
         baseBgView.tag = 1001
@@ -45,22 +48,63 @@ class StackHolder: UIView {
           ])
     }
     
-    // adding stack maximum 3 
-    func addStackView(stackView:StackCardView){
+    private func updateHeightDiffernce(){
+        if stackList.count == 3 {
+            if heightDifference > 0.3 {
+                heightDifference = 0.2
+            }
+        }
+        if stackList.count == 2 {
+            if heightDifference > 0.4{
+                heightDifference = 0.4
+            }
+        }
+    }
+    
+    // adding stack maximum 3
+    //:
+    
+    
+    /// function is used to add base view & stackviews
+    /// - Parameters:
+    ///   - baseView: base view or bg view which is static
+    ///   - stackViews: array of stackviews need to be added maximum 3
+    ///   - cardDelegate: delegate to know which card has been dismissed
+    func addStackViews(baseView:UIView, stackViews:[StackCardView], cardDelegate:CardActionDelegate){
+        self.addBaseView(baseView: baseView)
+        
+        delegate = cardDelegate
+        stackList.removeAll()
+        self.viewWithTag(2001)?.removeFromSuperview()
+        self.viewWithTag(2002)?.removeFromSuperview()
+        self.viewWithTag(2003)?.removeFromSuperview()
+                
+        if stackViews.count < maxStackView{
+            stackList.append(contentsOf: stackViews)
+            updateHeightDiffernce()
+            for (index, i) in stackViews.enumerated() {
+                self.addStackView(stackView: i, at: index + 1)
+            }
+        }
+    }
+    
+    private func addStackView(stackView:StackCardView, at index:Int){
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.currentCardNumber = stackList.count + 1
+        stackView.currentCardNumber = index
+        stackView.tag = 2000 + index
+        stackView.delegate = self
         self.addSubview(stackView)
-        let multiplier = (1.0 - (heightDifference * CGFloat(stackList.count)))
+        
+        let multiplier = (1.0 - (heightDifference * CGFloat(index)))
+        // Added for better user experience
+        
+        
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
             stackView.heightAnchor.constraint(equalTo: baseBgView.heightAnchor, multiplier: multiplier)
           ])
-        
-        if stackList.count < maxStackView{
-            stackList.append(stackView)
-        }        
     }
     
     
@@ -86,7 +130,7 @@ class StackHolder: UIView {
     }
     
     // fetches depending on Current top and then dismiss
-    func dismissStacks(){
+    private func dismissStacks(){
         
         if let stackCard = getStackCard(number: currentPresenting){
             stackCard.dismissView()
@@ -97,4 +141,11 @@ class StackHolder: UIView {
         currentPresenting = currentPresenting - 1
     }
         
+}
+
+extension StackHolder: CardActionDelegate{
+    func dismissCurrentCard(cardNumber: Int) {
+        delegate?.dismissCurrentCard(cardNumber: cardNumber)
+        dismissStacks()
+    }
 }
