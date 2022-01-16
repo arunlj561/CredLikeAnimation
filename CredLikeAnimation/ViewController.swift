@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         stackCardThird.delegate = self
         stackCardSecond.delegate = self
         
-        // Addding Base view which we will not collapse and will be a steady view
+        // Addding Base view which will not collapse and will be a background view 
         stackHolder.addBaseView(baseView: stackCardBg)
         
         // Addding UI which we want to be collapse
