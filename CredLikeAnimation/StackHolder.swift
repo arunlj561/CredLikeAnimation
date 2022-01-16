@@ -12,9 +12,11 @@ let maxStackView = 3
 class StackHolder: UIView {
 
     private var currentPresenting : Int = 0
-    
     private var stackList:[StackCardView] = []
-
+    
+    var heightDifference : CGFloat = 0.2
+    private var baseBgView : UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -29,14 +31,41 @@ class StackHolder: UIView {
     
     }
     
+    
+    func addBaseView(baseView:UIView){
+        baseBgView = baseView
+        baseBgView.translatesAutoresizingMaskIntoConstraints = false
+        baseBgView.tag = 1001
+        self.addSubview(baseBgView)
+        NSLayoutConstraint.activate([
+            baseBgView.topAnchor.constraint(equalTo: topAnchor),
+            baseBgView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            baseBgView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            baseBgView.bottomAnchor.constraint(equalTo: bottomAnchor)
+          ])
+    }
+    
     // adding stack maximum 3 
     func addStackView(stackView:StackCardView){
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.currentCardNumber = stackList.count + 1
+        self.addSubview(stackView)
+        let multiplier = (1.0 - (heightDifference * CGFloat(stackList.count)))
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.heightAnchor.constraint(equalTo: baseBgView.heightAnchor, multiplier: multiplier)
+          ])
+        
         if stackList.count < maxStackView{
             stackList.append(stackView)
         }        
     }
     
-    func getStackCard(number:Int) -> StackCardView?{
+    
+    
+    private func getStackCard(number:Int) -> StackCardView?{
         return stackList.filter({ $0.currentCardNumber == number }).first
     }
     

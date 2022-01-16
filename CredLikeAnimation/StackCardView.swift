@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable
 class StackCardView: UIView {
 
-    @IBInspectable var currentCardNumber : Int = 1
+    var currentCardNumber : Int = 1
     
     private var currentCardState : CardState = .collapse
     
@@ -58,7 +58,7 @@ class StackCardView: UIView {
         return true
     }
     
-    @objc func userTappedBottomButton(sender:UITapGestureRecognizer){
+    @objc private func userTappedBottomButton(sender:UITapGestureRecognizer){
         print(currentCardState)
         switch currentCardState {
         case .collapse:
@@ -74,7 +74,7 @@ class StackCardView: UIView {
     
     // animation to dismiss View
     func dismissView(isInitial:Bool = false){
-        // alpha change when dissming but not while loading
+        // alpha change when dissming but not while loading        
         if !isInitial {
             alpha = 1
         }

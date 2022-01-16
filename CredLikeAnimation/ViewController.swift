@@ -19,13 +19,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var stackCardBg: UIView!
     @IBOutlet weak var stackCardFirst: StackCardView!
     @IBOutlet weak var stackCardSecond: StackCardView!
     @IBOutlet weak var stackCardThird: StackCardView!
     
-    @IBOutlet var stackViewCollection: [StackCardView]!
-    
-    @IBOutlet weak var ctaButton: UIButton!
     
     @IBOutlet weak var stackHolder: StackHolder!
     
@@ -34,10 +32,15 @@ class ViewController: UIViewController {
         stackCardFirst.delegate = self
         stackCardThird.delegate = self
         stackCardSecond.delegate = self
+        
+        // Addding Base view which we will not collapse and will be a steady view
+        stackHolder.addBaseView(baseView: stackCardBg)
+        
         // Addding UI which we want to be collapse
-        stackHolder.addStackView(stackView: stackCardFirst)
         stackHolder.addStackView(stackView: stackCardSecond)
+        stackHolder.addStackView(stackView: stackCardFirst)
         stackHolder.addStackView(stackView: stackCardThird)
+        
     }
 
     @IBAction func actionTappedCTA(_ sender: UIButton) {
